@@ -3,8 +3,8 @@
 This is a Todo application that allows one to add a todo to a list. Each list item is equipped with a completed and delete button. The data is preserve with each refresh due to local storage.
 
 ## Screenshots
-<img src="src/assets/img1.png" width="100"/>
-![](src/assets/img1.png)
+<img src="src/assets/img1.png" width="500"/>
+
 
 ## Technologies
 
