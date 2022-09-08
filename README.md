@@ -5,6 +5,9 @@ This is a Todo application that allows one to add a todo to a list. Each list it
 ## Screenshots
 <img src="src/assets/img1.png" width="500"/>
 
+<img src="src/assets/img2.png" width="500"/>
+
+<img src="src/assets/img3.png" width="500"/>
 
 ## Technologies
 
