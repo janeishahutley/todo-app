@@ -1,13 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@300&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 body {
+  background-color: #333;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.header {
+  display: flex;
+  justify-content: center;
+  font-size: 90px;
+  font-family: 'Dancing Script', cursive;
+  color: palevioletred;
+}
+
+.todo-form {
+  display: flex;
+  margin: 50px auto;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 300px;
+  border-radius: 10px;
+  background-color: rgba(216, 112, 147, 0.3);
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  
+}
+
+ .todo-form form {
+   display: flex;
+   justify-content: center;
+  flex-wrap: wrap;
+ }
+
+.todo-input {
+  padding: 1rem 2rem;
+  border: none;
+  background-color: inherit;
+  color: #eee;
+  letter-spacing: 3px;
+  border-bottom: 3px solid #eee;
+  font-size: 20px;
+}
+
+.todo-input:focus {
+  outline: none;
+}
+
+.todo-button {
+  padding: 0.5rem 1.2rem;
+  background-color: transparent;
+  border: 3px #eee solid;
+  margin-left: 10px;
+  color: #eee;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  width: 30%;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.todo-button:hover {
+  background-color: #eee;
+  color: palevioletred;
+}
+
+.todo-item {
+  display: flex;
+justify-content: space-between;
+  margin: 20px auto;
+  font-size: 22px;
+  color: #333;
+  text-transform: uppercase;
+  list-style: none;
+  width: 30%;
+  background-color: #eee;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.btn {
+  height: 30px;
+  cursor: pointer;
+}
+
+.complete-btn {
+  background-color: rgba(216, 112, 147, 0.5);
+  color: #eee;
+  margin-left: 10px;
+}
+
+.delete-btn {
+  background-color: rgba(51, 51, 51, 0.5);
+  color: #eee;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+@media (min-width: 390px) and (max-width: 768px) {
+  .header {
+    font-size: 43px;
+  }
+  .todo-form {
+    background-color: #333;
+    box-shadow: none;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .todo-form form {
+    display: flex;
+  }
+  .todo-button {
+    font-size: 10px;
+    margin-left: 0;
+    padding: 0.2rem 0.5rem;
+    text-transform: capitalize;
+    border-radius: 0%;
+  }
+
+  .todo-input {
+    padding: 0.5rem 0.25rem;
+    font-size: 14px;
+    border: 2px solid #eee;
+    border-radius: none;
+  }
+  .todo-item {
+    margin: 7px auto;
+    text-transform: capitalize;
+    padding: 8px;
+    width: 70%;
+    
+  }
+  .btns {
+    height: 0;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width : 900px) {
+  .header {
+    font-size: 58px;
+  }
+    .todo-button {
+      padding: .5rem 1rem;
+      font-size: 17px;
+    }
+  
+    .todo-input {
+    text-align: center;
+      padding: 0.5rem 0.25rem;
+      font-size: 18px;
+    }
+  
+    .todo-item {
+      font-size: 20px;
+      
+    }
 }

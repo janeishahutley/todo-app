@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment, useState, useEffect} from 'react'
+import TodoForm from './components/TodoForm'
+import TodoList from './components/TodoList'
 
-function App() {
+
+const App = () => {
+  const [todos, setTodos] = useState([])
+
+  useEffect(() =>{
+    getTodos()
+  }, [])
+
+  useEffect(()=> {
+    saveLocalTodos()
+  }, [todos])
+
+
+
+  const addTodosHandler = (todo) => {
+    setTodos((prevTodos) => {
+      return [todo, ...prevTodos]
+    })
+  }
+
+  const saveLocalTodos = () => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }
+
+  const getTodos = () => {
+    if(localStorage.getItem === null) {
+      localStorage.setItem('todos', JSON.stringify([]))
+    } else {
+      let localTodo = JSON.parse(localStorage.getItem('todos'))
+      setTodos(localTodo)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Fragment>
+      <h1 className='header'>What's on the Agenda?</h1>
+      <TodoForm onAdd={addTodosHandler}/>
+      <TodoList todos={todos} setTodos={setTodos}/>
+    </Fragment>
+  )
 }
 
-export default App;
+export default App
